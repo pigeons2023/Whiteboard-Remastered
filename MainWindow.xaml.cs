@@ -52,6 +52,18 @@ namespace WhiteboardApp
             notifyIcon.Icon = Base64StringToIcon(base64Icon);
 
             notifyIcon.Visible = true; // 初始设置为可见
+
+            // 创建上下文菜单（右键菜单）
+            ContextMenuStrip contextMenu = new ContextMenuStrip();
+            ToolStripMenuItem menuItemClose = new ToolStripMenuItem("关闭");
+
+            // 添加菜单项到上下文菜单
+            contextMenu.Items.Add(menuItemClose);
+            notifyIcon.ContextMenuStrip = contextMenu;
+
+            // 为关闭菜单项添加事件处理
+            menuItemClose.Click += (sender, e) => CloseApplication();
+
             notifyIcon.DoubleClick +=
                 delegate (object sender, EventArgs args)
                 {
@@ -60,6 +72,7 @@ namespace WhiteboardApp
                     notifyIcon.Visible = false;
                 };
         }
+
 
         public static Icon Base64StringToIcon(string base64String)
         {
@@ -251,9 +264,17 @@ namespace WhiteboardApp
                 this.Close();
             }
         }
-
-
-
-
+        private void CloseApplication()
+        {
+            // 确认是否真的要关闭应用程序
+            if (System.Windows.MessageBox.Show("您要退出白板吗？", "退出", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                if (notifyIcon != null)
+                {
+                    notifyIcon.Dispose();
+                }
+                this.Close();
+            }
+        }
     }
 }
