@@ -5,11 +5,11 @@
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="白板应用" FontWeight="Bold" FontSize="25" Height="41"/>
-            <TextBlock><Run Text="版本 1.0"/><LineBreak/><Run Text="制作者"/><Run Language="zh-cn" Text=" pigeons2023"/></TextBlock>
-            <TextBlock Text="© 2024 白板软件" Height="19"/>
-            <TextBlock Text="简介" FontWeight="Bold" FontSize="15" Height="18"/>
-            <TextBlock Text="这是一个简单的白板应用，您可以使用不同的颜色和粗细绘制。"/>
+            <TextBlock Text="白板应用" FontWeight="Bold" FontSize="25" Height="38"/>
+            <TextBlock Height="39"><Run Text="版本 1.0"/><LineBreak/><Run Text="制作者"/><Run Language="zh-cn" Text=" pigeons2023"/></TextBlock>
+            <TextBlock Text="© 2024 白板软件" Height="22"/>
+            <TextBlock Text="简介" FontWeight="Bold" FontSize="15" Height="27"/>
+            <TextBlock Text="这是一个简单的白板应用，您可以使用不同的颜色和粗细绘制。" Height="18"/>
         </StackPanel>
     </Grid>
 </Window>
