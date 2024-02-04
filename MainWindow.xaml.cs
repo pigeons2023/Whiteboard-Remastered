@@ -276,5 +276,11 @@ namespace WhiteboardApp
                 this.Close();
             }
         }
+        private void OpenLotteryWindow_Click(object sender, RoutedEventArgs e)
+        {
+            LotteryApp.LotteryWindow lotteryWindow = new LotteryApp.LotteryWindow();
+            lotteryWindow.Show();
+        }
+
     }
 }

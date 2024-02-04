@@ -1,14 +1,46 @@
 ﻿<Window x:Class="YourNamespace.ColorPickerDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="选择颜色" Height="200" Width="250"
+        Title="选择颜色" Height="250" Width="350"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <StackPanel Margin="10,40,10,10">
-        <ListBox x:Name="lstColors" Height="200" Visibility="Collapsed"/>
-        <Button x:Name="btnCustomColor" Content="自定义颜色..." Margin="5" Click="BtnCustomColor_Click" Height="45"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-            <Button x:Name="btnOk" Content="确定" Margin="5" Click="BtnOk_Click" Height="30" Width="45"/>
-            <Button x:Name="btnCancel" Content="取消" Margin="5" Click="BtnCancel_Click" Width="45"/>
+    <Window.Resources>
+        <!-- 圆角按钮样式 -->
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF007ACC"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF005C99"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF003C66"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border Padding="10" Background="White" CornerRadius="10">
+        <StackPanel Margin="0,11,0,2">
+            <ListBox x:Name="lstColors" Height="0" Visibility="Visible"/>
+            <Button x:Name="btnCustomColor" Content="自定义颜色..." FontSize="24" Style="{StaticResource RoundedButtonStyle}" Margin="5" Click="BtnCustomColor_Click" Height="80"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" Height="92">
+                <Button x:Name="btnOk" Content="确定" FontSize="18" Style="{StaticResource RoundedButtonStyle}" Click="BtnOk_Click" Height="45" Width="75"/>
+                <Button x:Name="btnCancel" Content="取消" FontSize="18" Style="{StaticResource RoundedButtonStyle}" Click="BtnCancel_Click" Height="45" Width="75"/>
+            </StackPanel>
         </StackPanel>
-    </StackPanel>
+    </Border>
 </Window>
