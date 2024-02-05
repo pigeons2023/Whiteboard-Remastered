@@ -1,0 +1,49 @@
+﻿<Window x:Class="WhiteboardApp.SplashScreenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="启动页面" Height="300" Width="500"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFFFFF" >
+        <Border Background="#FFFFFF" CornerRadius="10">
+            <Grid>
+                <TextBlock Text="欢迎使用白板应用" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold"/>
+                <!-- 进度条 -->
+                <ProgressBar x:Name="splashProgressBar" Height="20" Margin="33,230,33,50" VerticalAlignment="Top" 
+                             IsIndeterminate="False">
+                    <ProgressBar.Style>
+                        <Style TargetType="ProgressBar">
+                            <Setter Property="Foreground" Value="#0078D7"/>
+                            <Setter Property="Background" Value="#EEEEEE"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ProgressBar">
+                                        <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <Grid x:Name="PART_Track">
+                                                <Rectangle x:Name="PART_Indicator" Fill="{TemplateBinding Foreground}" RadiusX="10" RadiusY="10" HorizontalAlignment="Left"/>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ProgressBar.Style>
+                </ProgressBar>
+            </Grid>
+        </Border>
+
+        <!-- 动画效果 -->
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetName="splashProgressBar"
+                                         Storyboard.TargetProperty="(ProgressBar.Value)"
+                                         From="0" To="100" Duration="0:0:5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+    </Grid>
+</Window>
