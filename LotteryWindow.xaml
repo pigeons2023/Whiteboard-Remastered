@@ -72,6 +72,7 @@
     </Window.Resources>
 
     <StackPanel Margin="10,14,10,0" VerticalAlignment="Top" Height="411">
+        <Button Content="生成示例CSV文件" FontSize="16" Click="GenerateSampleCSV_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
         <Button Content="选择参与者名单" FontSize="16" Click="SelectParticipantsFile_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
         <Button Content="抽取一人" FontSize="16" Click="DrawOne_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
         <Button Content="抽取多人" FontSize="16" Click="DrawMultiple_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>

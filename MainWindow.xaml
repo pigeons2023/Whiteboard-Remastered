@@ -74,9 +74,12 @@
 
             <!-- 应用文本和滑块样式 -->
             <TextBlock Style="{StaticResource TextStyle}">笔粗细:</TextBlock>
-            <Slider Name="sliderPenThickness" Minimum="1" Maximum="20" Value="2" TickFrequency="1" SmallChange="1" LargeChange="1" ValueChanged="sliderPenThickness_ValueChanged" Height="22"/>
+            <TextBlock Name="txtPenThicknessValue" Style="{StaticResource TextStyle}" Text="{Binding ElementName=sliderPenThickness, Path=Value, StringFormat='0'}" Width="18"/>
+            <Slider Name="sliderPenThickness" Minimum="1" Maximum="20" Value="2" TickFrequency="1" SmallChange="1" LargeChange="1" ValueChanged="sliderPenThickness_ValueChanged" Height="20"/>
+
             <TextBlock Style="{StaticResource TextStyle}">橡皮粗细:</TextBlock>
-            <Slider Name="sliderEraserThickness" Minimum="10" Maximum="50" Value="20" TickFrequency="1" SmallChange="1" LargeChange="1" ValueChanged="sliderEraserThickness_ValueChanged" Height="22"/>
+            <TextBlock Name="txtEraserThicknessValue" Style="{StaticResource TextStyle}" Text="{Binding ElementName=sliderEraserThickness, Path=Value, StringFormat='0' }" Width="18"/>
+            <Slider Name="sliderEraserThickness" Minimum="10" Maximum="50" Value="20" TickFrequency="1" SmallChange="1" LargeChange="1" ValueChanged="sliderEraserThickness_ValueChanged" Height="20"/>
 
             <Separator/>
 

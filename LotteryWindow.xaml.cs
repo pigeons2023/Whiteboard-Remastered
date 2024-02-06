@@ -80,6 +80,37 @@ namespace LotteryApp
             txtWinners.FontWeight = FontWeights.Bold; // 设置加粗
             txtWinners.FontSize = 24; // 设置字号
         }
+        private void GenerateSampleCSV_Click(object sender, RoutedEventArgs e)
+        {
+            // 定义示例数据
+            var sampleData = new List<string[]>
+    {
+        new string[] { "Name", "Weight" }, // CSV头
+        new string[] { "张三", "1" },
+        new string[] { "李四", "2" }
+    };
+
+            // 获取桌面路径
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string csvFilePath = System.IO.Path.Combine(desktopPath, "示例文件.csv");
+
+            // 创建并写入CSV文件
+            using (var writer = new StreamWriter(csvFilePath, false, System.Text.Encoding.UTF8))
+            using (var csv = new CsvHelper.CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                foreach (var row in sampleData)
+                {
+                    foreach (var field in row)
+                    {
+                        csv.WriteField(field);
+                    }
+                    csv.NextRecord();
+                }
+            }
+
+            MessageBox.Show($"示例CSV文件已生成至桌面: {csvFilePath}", "信息", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
     }
 
     public class Participant
@@ -87,4 +118,5 @@ namespace LotteryApp
         public string Name { get; set; }
         public int Weight { get; set; } // Weight for lottery draw
     }
+
 }
