@@ -72,9 +72,9 @@
     </Window.Resources>
 
     <StackPanel Margin="10,14,10,0" VerticalAlignment="Top" Height="411">
-        <Button Content="选择参与者名单" Click="SelectParticipantsFile_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
-        <Button Content="抽取一人" Click="DrawOne_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
-        <Button Content="抽取多人" Click="DrawMultiple_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
+        <Button Content="选择参与者名单" FontSize="16" Click="SelectParticipantsFile_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
+        <Button Content="抽取一人" FontSize="16" Click="DrawOne_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
+        <Button Content="抽取多人" FontSize="16" Click="DrawMultiple_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
         <TextBlock Name="txtWinners" Margin="10" Height="177" Background="White" TextWrapping="Wrap" Width="330"/>
     </StackPanel>
 </Window>

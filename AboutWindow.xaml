@@ -10,10 +10,10 @@
         <Grid>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="白板应用" FontWeight="Bold" FontSize="36" Height="50"/>
-                <TextBlock Height="44"><Run Text="版本 1.0" FontSize="16"/><LineBreak/><Run Text="制作者"/><Run Language="zh-cn" Text=" pigeons2023" FontSize="16"/></TextBlock>
+                <TextBlock Height="44"><Run Text="版本 1.0" FontSize="16"/><LineBreak/><Run Text="制作者" FontSize="16"/><Run Language="zh-cn" Text=" pigeons2023" FontSize="16"/></TextBlock>
                 <TextBlock Text="© 2024 白板软件 " FontSize="16" Height="30"/>
                 <TextBlock Text="简介" FontWeight="Bold" FontSize="22" Height="32"/>
-                <TextBlock Text="这是一个简单的白板应用，您可以使用不同的颜色和粗细绘制。" FontSize="16" Height="18" TextWrapping="Wrap" Width="400"/>
+                <TextBlock Text="白板轻舞，彩墨纷飞，粗细间流转，绘出诗意世界。" FontSize="16" Height="27" TextWrapping="Wrap" Width="372"/>
             </StackPanel>
         </Grid>
     </Border>
