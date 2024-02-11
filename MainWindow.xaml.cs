@@ -9,6 +9,7 @@ using System.Drawing; // 用于 Icon 类
 using System;
 using System.IO; // 用于 MemoryStream 类
 using System.Windows.Forms; // 用于 NotifyIcon
+using System.Windows.Media.Imaging;
 
 namespace WhiteboardApp
 {
@@ -30,7 +31,7 @@ namespace WhiteboardApp
             InitializeComponent();
             currentColor = System.Windows.Media.Brushes.Black;
             allPagesElements.Add(currentPageElements);
-
+            UpdateCurrentPageText(); // 更新页数
             InitializeNotifyIcon(); // 初始化 NotifyIcon
 
             // 设置为无边框窗口
@@ -176,6 +177,7 @@ namespace WhiteboardApp
         }
 
         // 上一页按钮点击事件
+        // 上一页按钮点击事件
         private void PrevPage_Click(object sender, RoutedEventArgs e)
         {
             if (currentPageIndex > 0)
@@ -187,6 +189,7 @@ namespace WhiteboardApp
                 {
                     drawingCanvas.Children.Add(elem);
                 }
+                UpdateCurrentPageText(); // 更新当前页数文本
             }
         }
 
@@ -196,12 +199,6 @@ namespace WhiteboardApp
             if (currentPageIndex < allPagesElements.Count - 1)
             {
                 currentPageIndex++;
-                drawingCanvas.Children.Clear();
-                currentPageElements = allPagesElements[currentPageIndex];
-                foreach (UIElement elem in currentPageElements)
-                {
-                    drawingCanvas.Children.Add(elem);
-                }
             }
             else
             {
@@ -209,7 +206,25 @@ namespace WhiteboardApp
                 allPagesElements.Add(currentPageElements);
                 currentPageIndex++;
             }
+
+            drawingCanvas.Children.Clear();
+            currentPageElements = allPagesElements[currentPageIndex];
+            foreach (UIElement elem in currentPageElements)
+            {
+                drawingCanvas.Children.Add(elem);
+            }
+
+            UpdateCurrentPageText(); // 更新当前页数文本
         }
+
+
+
+        // 更新当前页数文本
+        private void UpdateCurrentPageText()
+        {
+            txtCurrentPage.Text = "当前页：" + (currentPageIndex + 1);
+        }
+
         private void About_Click(object sender, RoutedEventArgs e)
         {
             AboutWindow aboutWindow = new AboutWindow();
@@ -280,6 +295,11 @@ namespace WhiteboardApp
         {
             LotteryApp.LotteryWindow lotteryWindow = new LotteryApp.LotteryWindow();
             lotteryWindow.Show();
+        }
+        private void ClearPage_Click(object sender, RoutedEventArgs e)
+        {
+            currentPageElements.Clear();
+            drawingCanvas.Children.Clear();
         }
 
     }
