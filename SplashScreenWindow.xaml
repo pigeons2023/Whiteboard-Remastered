@@ -10,6 +10,7 @@
             <!-- 窗口内容 -->
             <Grid>
                 <TextBlock Text="欢迎使用白板应用" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" Margin="0,271,0,0"><Run Text="© Copyright 2024 "/><Run Text="Pigeon"/><Run Language="zh-cn" Text="s2023"/><Run Text=". All rights reserved."/></TextBlock>
                 <!-- 进度条 -->
                 <ProgressBar x:Name="splashProgressBar" Height="20" Margin="33,230,33,50" VerticalAlignment="Top" 
                              IsIndeterminate="False">

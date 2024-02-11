@@ -15,7 +15,10 @@
                 <TextBlock Text="© 2024 白板软件" FontSize="16" Height="30"/>
                 <TextBlock Text="简介" FontWeight="Bold" FontSize="22" Height="40"/>
                 <TextBlock Height="26" Text="白板轻舞，彩墨纷飞，粗细间流转，绘出诗意世界。" FontSize="16" TextWrapping="Wrap" Width="372" LineHeight="1.4"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="12" Height="16" ><Run Text="© Copyright 2024 "/><Run Text="Pigeon"/><Run Language="zh-cn" Text="s2023"/><Run Text=". All rights reserved."/></TextBlock>
             </StackPanel>
+            
+
         </Grid>
     </Border>
     <Window.Effect>
