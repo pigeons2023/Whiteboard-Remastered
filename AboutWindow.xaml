@@ -9,11 +9,12 @@
     <Border CornerRadius="15" Background="White" Margin="10">
         <Grid>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="白板应用" FontWeight="Bold" FontSize="36" Height="50"/>
-                <TextBlock Height="44"><Run Text="版本 1.0" FontSize="16"/><LineBreak/><Run Text="制作者" FontSize="16"/><Run Language="zh-cn" Text=" pigeons2023" FontSize="16"/></TextBlock>
-                <TextBlock Text="© 2024 白板软件 " FontSize="16" Height="30"/>
-                <TextBlock Text="简介" FontWeight="Bold" FontSize="22" Height="32"/>
-                <TextBlock Text="白板轻舞，彩墨纷飞，粗细间流转，绘出诗意世界。" FontSize="16" Height="27" TextWrapping="Wrap" Width="372"/>
+                <TextBlock Text="白板应用" FontWeight="Bold" FontSize="36" Height="60" LineHeight="2"/>
+                <TextBlock Height="26"><Run FontSize="16" Text="版本 1.0"/></TextBlock>
+                <TextBlock Height="26"><Run FontSize="16" Text="制作者"/><Run Text=" "/><Run FontSize="16" Text=" pigeons2023"/></TextBlock>
+                <TextBlock Text="© 2024 白板软件" FontSize="16" Height="30"/>
+                <TextBlock Text="简介" FontWeight="Bold" FontSize="22" Height="40"/>
+                <TextBlock Height="26" Text="白板轻舞，彩墨纷飞，粗细间流转，绘出诗意世界。" FontSize="16" TextWrapping="Wrap" Width="372" LineHeight="1.4"/>
             </StackPanel>
         </Grid>
     </Border>

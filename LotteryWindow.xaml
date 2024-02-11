@@ -1,7 +1,8 @@
 ﻿<Window x:Class="LotteryApp.LotteryWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="抽奖" Height="450" Width="400">
+        Title="抽奖" Height="600" Width="400" Topmost="True"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!-- 按钮样式 -->
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
@@ -71,11 +72,11 @@
         </Style>
     </Window.Resources>
 
-    <StackPanel Margin="10,14,10,0" VerticalAlignment="Top" Height="411">
+    <StackPanel Margin="10,14,10,0" VerticalAlignment="Top" Height="514" >
         <Button Content="生成示例CSV文件" FontSize="16" Click="GenerateSampleCSV_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
         <Button Content="选择参与者名单" FontSize="16" Click="SelectParticipantsFile_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
         <Button Content="抽取一人" FontSize="16" Click="DrawOne_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
         <Button Content="抽取多人" FontSize="16" Click="DrawMultiple_Click" Style="{StaticResource AnimatedButtonStyle}" Width="330"/>
-        <TextBlock Name="txtWinners" Margin="10" Height="177" Background="White" TextWrapping="Wrap" Width="330"/>
+        <TextBlock Name="txtWinners" Margin="10" Height="213" Background="White" TextWrapping="Wrap" Width="330"/>
     </StackPanel>
 </Window>
